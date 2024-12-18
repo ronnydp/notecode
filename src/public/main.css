@@ -1,0 +1,317 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(116, 62, 228, 1);
+  background-image: url("img/Hero-Background-notecode@2x.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+header {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 35px;
+}
+
+.create-share {
+  font-size: 2rem;
+  margin-top: 45px;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.your-code-easily {
+  font-size: 2.5rem;
+  margin-top: 15px;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: normal;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5em;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ced6e1;
+  border-radius: 15px;
+  box-shadow: 0px 10px 80px -40px #364153;
+  position: relative;
+}
+
+#editor {
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 80px;
+  border-radius: 15px;
+  z-index: 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: absolute;
+  bottom: 0;
+}
+
+.dropdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+input {
+  display: flex;
+  background-image: url("img/down arrow.svg");
+  background-repeat: no-repeat;
+  background-position: right 5px center;
+  width: 95px;
+  height: 25px;
+  border-radius: 25px;
+  border: none;
+  color: #121826;
+  background-color: #ced6e1;
+  font-family: "Outfit", serif;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline: none;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding-right: 15px;
+  padding-left: 5px;
+  text-transform: uppercase;
+}
+
+input::placeholder {
+  color: #525c74;
+}
+
+.dropdown-container input:hover {
+  background-color: #808a9c;
+  border: 1px solid #808a9c;
+}
+
+.dropdown-content-languages {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  color: #364153;
+  width: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  max-height: 250px;
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  cursor: pointer;
+  transform: translateY(-113%);
+  font-family: "Outfit", serif;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.dropdown-content-themes {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  color: #364153;
+  width: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  max-height: 260px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  cursor: pointer;
+  transform: translateY(-140%);
+  font-family: "Outfit", serif;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+main ::-webkit-scrollbar {
+  width: 0px;
+  height: 12px;
+}
+
+main ::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 15px;
+}
+
+main ::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 15px;
+}
+
+main ::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+
+main .scrollable-element {
+  scrollbar-width: thin;
+  scrollbar-color: transparent;
+}
+
+.show {
+  display: block;
+}
+
+.option {
+  padding: 12px 12px;
+}
+
+.option:hover {
+  background-color: #f1f1f1;
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: "Outfit", sans-serif;
+  font-style: normal;
+}
+
+.link-container {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  border-radius: 25px;
+  width: 13em;
+  height: 40px;
+  border: none;
+  color: #364153;
+  font-size: 12px;
+  font-weight: 600;
+  overflow: hidden;
+  direction: rtl;
+  text-align: right;
+  cursor: pointer;
+}
+
+.link-container span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  font-size: 15px;
+  color: #787d85;
+  transition: opacity 0.3s ease;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.link-container span:hover {
+  animation: blink 1s infinite;
+}
+
+.share button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 8px;
+  border-radius: 25px;
+  width: 7em;
+  height: 40px;
+  border: none;
+  color: #ffff;
+  background-color: #406aff;
+  font-family: "Outfit", serif;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 1;
+}
+
+.share button:hover {
+  background-color: #65758f;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* DARK MODE */
+.vs-dark .card {
+  background-color: #1e1f1f;
+  border: 1px solid #1e1f1f;
+}
+
+.hc-black .card {
+  background-color: #000000;
+  border: 1px solid #000000;
+}
+
+.vs-dark .share button {
+  background-color: #69758a;
+}
+
+.vs-dark .share button:hover {
+  background-color: #474c55;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 1024px) {
+  .card {
+    width: 920px !important;
+  }
+
+  #editor {
+    width: 905px !important;
+    height: 80vh !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .card {
+    width: 640px;
+  }
+
+  #editor {
+    width: 615px;
+    height: 100vh !important;
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="icon" type="image/ico" href="/img/NoteCodeLogo.svg" />
+    <%- include('partials/head.ejs') %>
+  </head>
+  <body>
+    <header>
+      <img src="img/NoteCodeLogo.svg" alt="NodeCode Logo" />
+      <div class="create-share">Create & Share</div>
+      <div class="your-code-easily">Your Code easily</div>
+    </header>
+    <main>
+      <div class="card">
+        <div
+          id="editor"
+          data-code="<%= code %>"
+          data-language="<%= language %>"
+          data-theme="<%= theme %>"
+        ></div>
+        <div class="buttons">
+          <div class="dropdown-container">
+            <div class="language-dropdown">
+              <input
+                type="text"
+                autocomplete="off"
+                id="languageDropdown"
+                class="input"
+                readonly
+              />
+              <div class="dropdown-content-languages" id="languages"></div>
+            </div>
+            <div class="theme-dropdown">
+              <input
+                type="text"
+                autocomplete="off"
+                class="input"
+                id="themeDropdown"
+                readonly
+              />
+              <div class="dropdown-content-themes" id="themes"></div>
+            </div>
+          </div>
+
+          <div class="share">
+            <div class="link-container" id="linkContainer">
+              <span class="text" id="linkshare"></span
+              ><img class="icon" src="img/link.svg" alt="" />
+            </div>
+            <button id="share-button">
+              <img class="img-icon" src="img/share.svg" alt="" />Share
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="js/sharedEditor.js"></script>
+    <script src="js/dropdown.js"></script>
+  </body>
+</html>
